@@ -16,7 +16,7 @@ int depositar(long long valor, long long* saldo) { //para a conta corrente
 int sacar(long long valor, long long* saldo) { //para a conta corrente
     enum status situacao;
     
-    if(valor > 0) { //Checa se é positivo
+    if(valor >= 0) { //Checa se é positivo
         if((*saldo - valor) > 0) { //Checa se há saldo
             *saldo -= valor;
             situacao = OK; //Retorna 0
@@ -32,10 +32,4 @@ int sacar(long long valor, long long* saldo) { //para a conta corrente
 
 void saldo_corrente(long long* saldo){
     printf("O seu saldo é: %d", *saldo);
-}
-
-
-
-// conta_corrente(void){
-    
 }
