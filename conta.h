@@ -32,14 +32,14 @@ void conta_init(void); //inicializar a conta logo no início da aplicação.
 
 int depositar(long long valor, long long* saldo); // depositar na conta
 int sacar(long long valor, long long* saldo); // sacar da conta
-int  aplicar_poupanca(long long valor); // passar dinheiro da conta para a poupança
-int  resgatar_poupanca(long long valor); //passar dinheiro da poupança para a conta
+int  aplicar_poupanca(long long valor, long long* saldo_poupanca, long long* saldo_corrente); // passar dinheiro da conta para a poupança
+int  resgatar_poupanca(long long valor, long long* saldo_poupanca, long long* saldo_corrente); //passar dinheiro da poupança para a conta
 int  fazer_pix(const char destino[], long long valor); //tirar dinheiro da conta e transferir para a chave pix
 void render_poupanca(double rendimento_mensal); // colocar na conta o rendimento mensal da poupança
 int  receber_pix(long long valor); // creditar um pix recebido na conta
 
-long long saldo_corrente(void); // retorna o valor do saldo
-long long saldo_poupanca(void); // retorna o valor da poupança
+void saldo_corrente(long long* saldo); // retorna o valor do saldo
+void saldo_poupanca(long long* saldo); // retorna o valor da poupança
 
 void extrato_imprimir(void); //imprime as transações realizadas e o saldo final.
 
