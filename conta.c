@@ -66,3 +66,30 @@ int resgatar_poupanca(long long valor, long long* saldo_poupanca, long long* sal
         situacao = 1;
     }
 }
+
+void extrato_imprimir(enum TipoTransacao tp, char quando[20]) { //use for no main
+    switch (tp) {
+        case 0:
+        printf("Tipo de Transação: DEPÓSITO\n");
+        break;
+        case 1:
+        printf("Tipo de Transação: SAQUE\n");
+        break;
+        case 2:
+        printf("Tipo de Transação: APLICAÇÃO NA POUPANÇA\n");
+        break;
+        case 3:
+        printf("Tipo de Transação: RESGATE DA POUPANÇA\n");
+        break;
+        case 4:
+        printf("Tipo de Transação: PIX\n");
+        break;
+        case 5:
+        printf("Tipo de Transação: RENDIMENTO\n");
+        break;
+        case 6:
+        printf("Tipo de Transação: RECEBER PIX\n");
+        break;
+    }
+    printf("Tempo: %20s", quando);
+}

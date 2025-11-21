@@ -41,6 +41,6 @@ int  receber_pix(long long valor); // creditar um pix recebido na conta
 void saldo_corrente(long long* saldo); // retorna o valor do saldo
 void saldo_poupanca(long long* saldo); // retorna o valor da poupança
 
-void extrato_imprimir(void); //imprime as transações realizadas e o saldo final.
+void extrato_imprimir(enum TipoTransacao tp, char quando[20]); //imprime as transações realizadas e o saldo final.
 
 #endif // CONTA_H
