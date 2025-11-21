@@ -67,8 +67,11 @@ int resgatar_poupanca(long long valor, long long* saldo_poupanca, long long* sal
     }
 }
 
-void extrato_imprimir(enum TipoTransacao tp, char quando[20]) { //use for no main
-    switch (tp) {
+void extrato_imprimir(void){
+    for(int i = 0; i < MAX_TRANS; i++){
+        int a = i + 1;
+        printf("Informacoes sobre a %d transacao\n", a);
+        switch (ContaAtualDoUsuario.log[i].tipo){
         case 0:
         printf("Tipo de Transação: DEPÓSITO\n");
         break;
@@ -91,5 +94,12 @@ void extrato_imprimir(enum TipoTransacao tp, char quando[20]) { //use for no mai
         printf("Tipo de Transação: RECEBER PIX\n");
         break;
     }
-    printf("Tempo: %20s", quando);
+        //Ainda falta alterar os parametros de chamada dos printf, tá como %d
+        printf("O valor da transacao foi: %d\n", ContaAtualDoUsuario.log[i].valor);
+        printf("O saldo da conta corrente apos foi: %d\n", ContaAtualDoUsuario.log[i].saldo_corrente_apos);
+        printf("O saldo da conta poupanca apos foi: %d\n", ContaAtualDoUsuario.log[i].saldo_poupanca_apos);
+        printf("O destino da transacao foi: %s\n", ContaAtualDoUsuario.log[i].destino);
+        printf("O horario da transacao foi: %s\n", ContaAtualDoUsuario.log[i].quando);
+        printf("\n");
+    }
 }
